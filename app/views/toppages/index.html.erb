@@ -1,5 +1,9 @@
-<div class="center jumbotron">
-  <div class="text-center">
-    <h1>Welcome to the 5ch</h1>
+<% if logged_in? %>
+  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+<% else %>
+  <div class="center jumbotron">
+    <div class="text-center">
+      <h1>Welcome to the OriginalService</h1>
+    </div>
   </div>
-</div>
+<% end %>
