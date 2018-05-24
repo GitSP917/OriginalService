@@ -13,15 +13,13 @@
     <ul class="nav nav-tabs nav-justified">
       <li><a href="#">履歴</a></li>
             
-        <% responses.each do |response| %>
+        <% @responses.each do |response| %>
           <li class="media">
             <div>
-              <%= "#{(i + 1)}:"+response.content %>
+              <%= response.content %>
             </div>
           </li>
         <% end %>
-        <%= paginate responses %>
-            
     </ul>
   </div>
 </div>
