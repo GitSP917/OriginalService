@@ -1,0 +1,13 @@
+<ul class="media-list">
+  <% thres.each_with_index do  |thre,i| %>
+    <li class="media">
+      <div class="media-body">
+        <div>
+          <%= "#{(i + 1)}:"%>
+          <%= link_to thre.title, thre_path(thre)%>
+        </div>
+      </div>
+    </li>
+  <% end %>
+  <%= paginate thres %>
+</ul>

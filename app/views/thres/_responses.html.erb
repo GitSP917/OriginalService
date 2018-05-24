@@ -1,0 +1,10 @@
+<ul class="media-list">
+  <% responses.each_with_index do |response, i| %>
+    <li class="media">
+      <div>
+        <%= "#{(i + 1)}:"+response.content %>
+      </div>
+    </li>
+  <% end %>
+  <%= paginate responses %>
+</ul>
