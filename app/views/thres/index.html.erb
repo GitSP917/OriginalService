@@ -1,11 +1,13 @@
-<div class="center jumbotron">
-  <div class="text-center">
-    <h1>スレッド一覧ページ</h1>
-  </div>
+<div class="row">
+  <p>スレッド一覧ページ</p>
 </div>
-<h1><%= link_to 'スレ作成', new_thre_path%></h1>
+
+<h1>一覧</h1>
+
 
 <div class="col-xs-8">
   <%= render 'thres/threads', thres: @threads %>
+  
+  <h1><%= link_to 'スレ作成', new_thre_path, class: 'btn btn-default'%></h1>
 </div>
 

@@ -15,7 +15,7 @@ class ResponsesController < ApplicationController
     
     if @response.save!
       flash[:success] = '投稿しました。'
-      redirect_to root_url
+      redirect_to @thre
     else
       @responses = current_user.responses.order('created_at DESC').page(params[:page])
       flash.now[:danger] = '投稿に失敗しました。'
@@ -27,6 +27,7 @@ class ResponsesController < ApplicationController
   private
   
   def response_params
+    #params.require(:response).permit(:content, :thre_id)
     params.require(:response).permit(:content)
   end
   

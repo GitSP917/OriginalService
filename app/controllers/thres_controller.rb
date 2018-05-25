@@ -23,15 +23,17 @@ class ThresController < ApplicationController
     @thread = current_user.thres.build(thread_params)
     if @thread.save
       flash[:success] = 'スレッドを作成しました。'
-      redirect_to root_url
+      redirect_to @thread
     else
       @threads = current_user.thres.order('created_at DESC').page(params[:page])
       flash.now[:danger] = 'スレッドの作成に失敗しました。'
-      render 'toppages/index'
+      render :new
     end
   end
 
   def destroy
+    @thread = current_user.thres.find_by(id: params[:id])
+    return redirect_to root_url if @thread.user != current_user
     @thread.destroy
     flash[:success] = 'スレッドを削除しました。'
     redirect_back(fallback_location: root_path)
