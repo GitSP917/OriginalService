@@ -4,23 +4,27 @@
 
 <div class="row">
   <h1><%= @thread.title %></h1>
+  
+  <%# 削除ボタン %>
+  <div>
+    <% if current_user == @thread.user %>
+      <%= form_for @thread, url: thre_path(@thread), html: { method: :delete } do |f| %>
+        <%= f.submit 'スレ削除', class: 'btn btn-danger' %>
+      <% end %>
+    <% end %>
+  </div>
+  
   <%= render 'thres/responses', responses: @responses %>
 </div>
 
+
+
 <div class="row">
-  <a>投稿フォーム</a>
   <%= form_for @response, url: thre_responses_path(@thread) do |f| %>
     <%#= f.hidden_field :thre_id %>
     <div class="form-group">
       <%= f.label :content, 'content' %>
       <%= f.text_field :content, class: 'form-control' %>
-      
-      <%# 削除ボタン %>
-      <div>
-        <% if current_user == @thread.user %>
-          <%= link_to "削除", method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-block' %>
-        <% end %>
-      </div>
       
     </div>
     

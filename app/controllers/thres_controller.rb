@@ -15,6 +15,7 @@ class ThresController < ApplicationController
   
   def show
     @thread = Thre.find(params[:id])
+    @thread = Thre.find(params[:id])
     @response = @thread.responses.build
     @responses = @thread.responses.page(params[:page])
   end
