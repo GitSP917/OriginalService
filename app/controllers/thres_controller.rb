@@ -37,7 +37,7 @@ class ThresController < ApplicationController
     return redirect_to root_url if @thread.user != current_user
     @thread.destroy
     flash[:success] = 'スレッドを削除しました。'
-    redirect_back(fallback_location: root_path)
+    redirect_to current_user
   end
 
   private
