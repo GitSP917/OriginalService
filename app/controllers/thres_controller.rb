@@ -22,6 +22,7 @@ class ThresController < ApplicationController
 
   def create
     @thread = current_user.thres.build(thread_params)
+    @thread.thretime=Time.now.to_s(:db)
     if @thread.save
       flash[:success] = 'スレッドを作成しました。'
       redirect_to @thread

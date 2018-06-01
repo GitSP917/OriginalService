@@ -2,10 +2,12 @@
   <% thres.each_with_index do  |thre,i| %>
     <li class="media">
       <div class="media-body">
-        <div>
-          <%= "#{(i + 1)}:"%>
-          <%= link_to thre.title, thre_path(thre)%>
-        </div>
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-warning">
+            <%= thre.thretime.in_time_zone('Tokyo').strftime("%Y-%m-%d %H:%M:%S") %><br>
+            <h1><%= "#{(i + 1)}:"%><%= link_to thre.title, thre_path(thre)%></h1>
+          </li>
+        </ul>
       </div>
     </li>
   <% end %>

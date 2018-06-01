@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20180518032620) do
     t.string   "content"
     t.integer  "user_id"
     t.integer  "thre_id"
+    t.datetime "restime"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["thre_id"], name: "index_responses_on_thre_id", using: :btree
@@ -25,6 +26,7 @@ ActiveRecord::Schema.define(version: 20180518032620) do
   create_table "thres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
     t.integer  "user_id"
+    t.datetime "thretime"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_thres_on_user_id", using: :btree

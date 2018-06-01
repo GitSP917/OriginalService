@@ -1,10 +1,12 @@
+<div class="center jumbotron">
+  <div class="text-center">
+    <h1>Welcome to the OriginalService</h1>
+  </div>
+</div>
 <% if logged_in? %>
   <p>ログイン完了ユーザ: <%= current_user.name %></p>
   <p><%= link_to 'スレ一覧', thres_path , class: 'btn btn-default'%></p>
 <% else %>
-  <div class="center jumbotron">
-    <div class="text-center">
-      <h1>Welcome to the OriginalService</h1>
-    </div>
-  </div>
+  <%= link_to 'アカウント作成', signup_path, class: 'btn btn-lg btn-primary' %>
+  <%= link_to 'ログイン', login_path, class: 'btn btn-lg btn-primary' %>
 <% end %>

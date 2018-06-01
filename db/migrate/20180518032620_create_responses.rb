@@ -4,6 +4,7 @@ class CreateResponses < ActiveRecord::Migration[5.0]
       t.string :content
       t.references :user, foreign_key: true
       t.references :thre, foreign_key: true
+      t.datetime :restime
 
       t.timestamps
     end

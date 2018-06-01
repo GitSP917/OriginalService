@@ -2,7 +2,12 @@
   <% responses.each_with_index do |response, i| %>
     <li class="media">
       <div>
-        <%= "#{(i + 1)}:"+response.content %>
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-info">
+            <%= response.restime.in_time_zone('Tokyo').strftime("%Y-%m-%d %H:%M:%S") %><br>
+            <%= "#{(i + 1)}:"+response.content %>
+          </li>
+        </ul>
       </div>
     </li>
   <% end %>
