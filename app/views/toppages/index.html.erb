@@ -5,6 +5,9 @@
 </div>
 <% if logged_in? %>
   <p>ログイン完了ユーザ: <%= current_user.name %></p>
+  
+  <%#= link_to image_tag('internet_enjou.png', { :border => '0', :alt => 'スレッド一覧'}), thres_path %>
+  
   <p><%= link_to 'スレ一覧', thres_path , class: 'btn btn-default'%></p>
 <% else %>
   <%= link_to 'アカウント作成', signup_path, class: 'btn btn-lg btn-primary' %>

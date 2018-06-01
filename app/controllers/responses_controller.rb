@@ -12,7 +12,7 @@ class ResponsesController < ApplicationController
     @thre = Thre.find(params[:thre_id])
     @response = current_user.responses.build(response_params)
     @response.thre_id = @thre.id
-    @response.restime=Time.now.to_s(:db).in_time_zone('Tokyo')
+    @response.restime=Time.now.to_s(:db)
 
     if @response.save!
       flash[:success] = '投稿しました。'

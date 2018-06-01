@@ -48,7 +48,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: OriginalService_production
   username: OriginalService
   password: <%= ENV['ORIGINALSERVICE_DATABASE_PASSWORD'] %>
